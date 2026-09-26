@@ -2,12 +2,14 @@
 
 var stack = new StackUsingArray<string>(10);
 
-try
+
+
+var option = string.Empty;
+do
 {
-    var option = string.Empty;
-    do
+    option = Menu();
+    try
     {
-        option = Menu();
         switch (option)
         {
             case "1":
@@ -24,13 +26,16 @@ try
                 Console.WriteLine("Opción inválida");
                 break;
         }
-    } while (option != "0");
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-    
-}
+    }
+    catch (Exception ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"Error: {ex.Message}");
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+
+} while (option != "0");
+
 string Menu()
 {
     Console.WriteLine("1. Apilar");
