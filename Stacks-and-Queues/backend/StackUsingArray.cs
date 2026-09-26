@@ -12,27 +12,34 @@ public class StackUsingArray<T>
     _stack = new T[capacity];
     _top = -1;
   }
-
-  public void Push(T item)
-  {
-    _top++;
-    _stack[_top] = item;
-  }
+    //operationes apilar
+  public bool IsFull { get => _top == _stack.Length - 1; }
+  public bool IsEmpty { get => _top == -1; }
+    public void Push(T item)
+    {
+    if  (IsFull)
+        {
+            throw new InvalidOperationException("Stack is full");
+        }
+        _top++;
+        _stack[_top] = item;
+    }
 
   public T Pop()
   {
-    T item = _stack[_top];
-    _top--;
-    return item;
+        if(IsEmpty)
+        {
+            throw new InvalidOperationException("Stack is empty");
+        }
+        return _stack[_top--];
   }
+    public T Peek()
+    {
+        if (IsEmpty)
+        {
+            throw new InvalidOperationException("Stack is empty");
+        }
+        return _stack[_top--];
+    }
 
-  public T Peek()
-  {
-    return _stack[_top];
-  }
-
-  public bool IsEmpty()
-  {
-    return _top == -1;
-  }
 }
