@@ -1,8 +1,6 @@
 ﻿using backend;
 
-var stack = new StackUsingArray<string>(10);
-
-
+var stack = new StackUsingList<string>();
 
 var option = string.Empty;
 do
