@@ -29,9 +29,11 @@ do
     }
     catch (Exception ex)
     {
-        Console.ForegroundColor = ConsoleColor.Red;
+        Console.BackgroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine($"Error: {ex.Message}");
         Console.ForegroundColor = ConsoleColor.White;
+        Console.BackgroundColor = ConsoleColor.Black;
     }
 
 } while (option != "0");
