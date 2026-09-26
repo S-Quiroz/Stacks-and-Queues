@@ -12,7 +12,7 @@ public class StackUsingArray<T>
     _stack = new T[capacity];
     _top = -1;
   }
-    //operationes apilar
+  //operationes apilar
   public bool IsFull { get => _top == _stack.Length - 1; }
   public bool IsEmpty { get => _top == -1; }
     public void Push(T item)
